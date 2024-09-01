@@ -1,0 +1,41 @@
+<div class="portfolio py-5 position-relative">
+    <div class="container py-3">
+        <h2 class="text-center text-uppercase  fs-1 fw-bolder py-2">Products</h2>
+        <div class="lines d-flex align-items-center justify-content-center mb-4">
+            <div class="line me-3">
+            </div>
+            
+        </div>
+        <div class="portofoli-cards">
+            <div class="row">
+                @for (product of products; track $index) {
+                    <div class="col-md-3 g-5" >
+                        <div class="card">
+                            <img [src]="product.image"  alt="...">
+                            <div class="card-body">
+                              <h4 class="card-title text-center">{{product.title.split(" ").slice(0,3).join(" ")}}</h4>
+                              <p class="card-text">{{product.description.split(" ").slice(0,15).join(" ")}}</p>
+                              <h5 class="card-text">
+                                <span class="badge text-bg-secondary">Price</span> 
+                                {{product.price}}
+                            </h5>
+                            <h5 class="card-text">
+                                <span class="badge text-bg-secondary">Rating</span> 
+                                {{product.rating.rate}}
+                            </h5>
+                            <h5 class="card-text">
+                                <span class="badge text-bg-secondary">Count</span> 
+                                {{product.rating.count}}
+                            </h5>
+                                
+                            </div>
+                          </div>
+                    </div>
+                }
+                
+              
+               
+            </div>
+        </div>
+    </div>
+</div>
